@@ -94,7 +94,7 @@ const Footer = ({ data, templateData }: FooterProps) => {
       </footer>
       <Row className='text-center copyright mb-5'>
         <Col>
-          <Container className="d-flex justify-content-center align-items-center footer-link">
+          <Container className="custom-flex justify-content-center align-items-center footer-link">
             <p>
               <FaRegCopyright/>
               {templateData?.c_copyrightText}

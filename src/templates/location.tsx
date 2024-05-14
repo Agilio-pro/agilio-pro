@@ -58,6 +58,7 @@ export const config: TemplateConfig = {
       "c_financeDescription",
       "c_financeOffer",
       "c_reviewLink",
+      "c_financeOfferAvailable",
     ],
     localization: {
       locales: [YEXT_PUBLIC_LOCATION_LOCALE_CODE],

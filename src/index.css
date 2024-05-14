@@ -625,6 +625,10 @@ footer {
 .form_img-top img {
   position: relative;
 }
+
+.custom-flex {
+  display: flex !important;
+}
 @media (min-width: 1200px) {
 
   .container,
@@ -703,5 +707,8 @@ footer {
 @media (max-width: 560px){
   .est-btn{
     display: none !important;
+  }
+  .custom-flex {
+    display: inline !important;
   }
 }

@@ -10,7 +10,20 @@ export interface AboutProps {
 }
 
 const Content = ({ data }: AboutProps) => {
-  const { name, c_review, c_serviceOfferings, c_subServiceAreas, c_serviceArea, services, c_trade, c_businessExperience, c_financeDescription, c_financeOffer, c_financeSectionHeading, c_financeSectionImage
+  const {
+    name,
+    c_review,
+    c_serviceOfferings,
+    c_subServiceAreas,
+    c_serviceArea,
+    services,
+    c_trade,
+    c_businessExperience,
+    c_financeDescription,
+    c_financeOffer,
+    c_financeSectionHeading,
+    c_financeSectionImage,
+    c_financeOfferAvailable
   } = data
 
   const [showModal, setShowModal] = React.useState(false);
@@ -119,7 +132,7 @@ const Content = ({ data }: AboutProps) => {
           </Row>
         </Container>
       </section>
-      {c_financeSectionHeading && 
+      {c_financeOfferAvailable &&
         <section className='finance-section'>
           <Container>
             <h4 className="offer-heading">{c_financeSectionHeading}</h4>
