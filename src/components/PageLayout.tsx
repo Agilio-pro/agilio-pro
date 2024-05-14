@@ -30,7 +30,7 @@ const PageLayout = ({ children, data, templateData }: PageLayoutProps) => {
       <AnalyticsProvider templateData={templateData}>
         <div className="min-h-screen">
           <AnalyticsScopeProvider name="header">
-            <Header data={data} />
+            <Header data={data} templateData={templateData?.document} />
           </AnalyticsScopeProvider>
           {children}
           <AnalyticsScopeProvider name="footer">
