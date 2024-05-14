@@ -23,7 +23,8 @@ const Content = ({ data }: AboutProps) => {
     c_financeOffer,
     c_financeSectionHeading,
     c_financeSectionImage,
-    c_financeOfferAvailable
+    c_financeOfferAvailable,
+    c_financeLearnMore
   } = data
 
   const [showModal, setShowModal] = React.useState(false);
@@ -138,13 +139,18 @@ const Content = ({ data }: AboutProps) => {
             <h4 className="offer-heading">{c_financeSectionHeading}</h4>
             <Row>
               <Col lg={6}>
-                <img src={c_financeSectionImage?.url} className="img-fluid m-width-300"></img>
+                <img src={c_financeSectionImage?.url} className="img-fluid mb-3 m-width-300"></img>
                 {c_financeDescription &&
                   <p>{c_financeDescription}</p>
                 }
               </Col>
               <Col>
                 <Markdown>{c_financeOffer?.markdown}</Markdown>
+                <div className="text-end my-4">
+                  <Button onClick={() => window.open(c_financeLearnMore,'_blank')} className="btn-lg btn-cus" variant="success">
+                    Learn More
+                  </Button>
+                </div>
               </Col>
             </Row>
           </Container>

@@ -1,6 +1,6 @@
 import * as React from "react";
 import { formatPhoneNumberIntl } from "react-phone-number-input";
-import { Container, Navbar, Button, Col } from "react-bootstrap";
+import { Container, Navbar, Button, Col, Form } from "react-bootstrap";
 import FormModal from "./FormModal";
 import { Link } from "@yext/sites-components";
 
@@ -27,14 +27,22 @@ const Header = ({ data }: HeaderProps) => {
               </Navbar.Brand>
             </div>
             <div className="col-6 col-xl-6 col-sm-8 justify-content-end align-items-center d-flex">
-              <div className='d-flex gap-3 me-3'>
-                <Col className="text-center">
+              <div className='d-flex gap-3 me-3 align-items-start'>
+                <Col className="text-start">
                   <Link href={`tel:${phone}`}>
-                    <Button className="btn-lg btn-cus btn-call" variant="outline-dark">
+                    <Button className="btn-lg mb-2 btn-cus btn-call" variant="outline-dark">
                       Call {formatPhoneNumberIntl(phone)}
                     </Button>
                   </Link>
-                  <p className="mb-0">Se habla español</p>
+                  {/* <p className="mb-0">Se habla español</p> */}
+                  <Form>
+                    <Form.Check
+                      reverse
+                      type="switch"
+                      id="test"
+                      label='Se habla español'
+                    />
+                  </Form>
                 </Col>
                 <Button onClick={() =>   toggleModal()} className="btn-lg btn-cus est-btn" variant="success">
                   Get A Free Estimate

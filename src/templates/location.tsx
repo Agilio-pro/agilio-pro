@@ -9,7 +9,7 @@ import {
   TemplateRenderProps,
 } from "@yext/pages";
 import "../index.css";
-import Favicon from "../assets/images/yext-favicon.ico";
+import Favicon from "../assets/images/favicon.ico";
 import Content from "../components/Content";
 import Banner from "../components/Banner";
 import PageLayout from "../components/PageLayout";
@@ -59,6 +59,8 @@ export const config: TemplateConfig = {
       "c_financeOffer",
       "c_reviewLink",
       "c_financeOfferAvailable",
+      "c_financeLearnMore",
+      "c_favIcon"
     ],
     localization: {
       locales: [YEXT_PUBLIC_LOCATION_LOCALE_CODE],
@@ -80,6 +82,7 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
   relativePrefixToRoot
 }): HeadConfig => {
   const ogImage = document.photoGallery?.[0]?.image?.url ?? null;
+  const fav_icon = document?.c_favIcon ?? Favicon;
 
   return {
     title: document.name,
