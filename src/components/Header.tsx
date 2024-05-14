@@ -1,6 +1,6 @@
 import * as React from "react";
 import { formatPhoneNumberIntl } from "react-phone-number-input";
-import { Container, Navbar, Button } from "react-bootstrap";
+import { Container, Navbar, Button, Col } from "react-bootstrap";
 import FormModal from "./FormModal";
 import { Link } from "@yext/sites-components";
 
@@ -26,14 +26,17 @@ const Header = ({ data }: HeaderProps) => {
                 <img width={"80%"} src={data.logo.image.url} className="img-fluid"></img>
               </Navbar.Brand>
             </div>
-            <div className="col-6 col-xl-6 col-sm-8 justify-content-end d-flex">
+            <div className="col-6 col-xl-6 col-sm-8 justify-content-end align-items-center d-flex">
               <div className='d-flex gap-3 me-3'>
-                <Link href={`tel:${phone}`}>
-                  <Button className="btn-lg btn-cus btn-call" variant="outline-dark">
-                    Call {formatPhoneNumberIntl(phone)}
-                  </Button>
-                </Link>
-                <Button onClick={() => toggleModal()} className="btn-lg btn-cus est-btn" variant="success">
+                <Col className="text-center">
+                  <Link href={`tel:${phone}`}>
+                    <Button className="btn-lg btn-cus btn-call" variant="outline-dark">
+                      Call {formatPhoneNumberIntl(phone)}
+                    </Button>
+                  </Link>
+                  <p className="mb-0">Se habla español</p>
+                </Col>
+                <Button onClick={() =>   toggleModal()} className="btn-lg btn-cus est-btn" variant="success">
                   Get A Free Estimate
                 </Button>
               </div>

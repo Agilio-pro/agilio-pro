@@ -379,8 +379,8 @@ a {
 }
 
 .service-area-section {
-  background: #fff;
-  padding: 100px 0 0;
+  background: var(--map-section-background);
+  padding: 60px 0;
 }
 
 ul.area-list {
@@ -411,6 +411,10 @@ iframe {
   padding-right: 10px;
   font-size: 15px;
   color: #294db6;
+}
+
+img.m-width-300{
+  max-width: 300px;
 }
 
 /* CSS Footer css */
@@ -547,6 +551,10 @@ footer {
 
 .our-service-section {
   padding-top: 150px;
+}
+
+.finance-section{
+  padding: 60px 0;
 }
 
 .card-image-wrap img {

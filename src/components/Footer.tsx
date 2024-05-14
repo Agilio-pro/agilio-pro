@@ -44,6 +44,11 @@ const Footer = ({ data, templateData }: FooterProps) => {
               <Button className="btn-lg btn-cus mx-2" variant="success" onClick={() => toggleModal()}>
                 Get a Free Estimate
               </Button>
+              <Link href={templateData?.c_reviewLink}>
+                <Button className="btn-lg btn-cus" variant="success">
+                  Write a review
+                </Button>
+              </Link>
             </Col>
             <Col lg={3} className="justify-content-center justify-content-lg-end d-flex footer-social-icons align-items-center mb-3">
               <ul>
@@ -63,21 +68,21 @@ const Footer = ({ data, templateData }: FooterProps) => {
                 }
                 {templateData?.facebookPageUrl &&
                   <li>
-                    <a href='#'>
+                    <a href={templateData?.facebookPageUrl}>
                       <FaFacebook/>
                     </a>
                   </li>
                 }
                 {templateData?.linkedInUrl &&
                   <li>
-                    <a href='#'>
+                    <a href={templateData?.linkedInUrl}>
                       <FaLinkedin/>
                     </a>
                   </li>
                 }
                 {templateData?.youTubeChannelUrl &&
                   <li>
-                    <a href='#'>
+                    <a href={templateData?.youTubeChannelUrl}>
                       <FaYoutube/>
                     </a>
                   </li>

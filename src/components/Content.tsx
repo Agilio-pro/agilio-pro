@@ -3,13 +3,15 @@ import { Container, Row, Col, Button } from "react-bootstrap";
 import { FaStar } from "react-icons/fa";
 import { FaArrowRight } from "react-icons/fa6";
 import FormModal from "./FormModal";
+import Markdown from "markdown-to-jsx";
 
 export interface AboutProps {
   data: any;
 }
 
 const Content = ({ data }: AboutProps) => {
-  const { name, c_review, c_serviceOfferings, c_subServiceAreas, c_serviceArea, services, c_trade, c_businessExperience } = data
+  const { name, c_review, c_serviceOfferings, c_subServiceAreas, c_serviceArea, services, c_trade, c_businessExperience, c_financeDescription, c_financeOffer, c_financeSectionHeading, c_financeSectionImage
+  } = data
 
   const [showModal, setShowModal] = React.useState(false);
 
@@ -117,6 +119,24 @@ const Content = ({ data }: AboutProps) => {
           </Row>
         </Container>
       </section>
+      {c_financeSectionHeading && 
+        <section className='finance-section'>
+          <Container>
+            <h4 className="offer-heading">{c_financeSectionHeading}</h4>
+            <Row>
+              <Col lg={6}>
+                <img src={c_financeSectionImage?.url} className="img-fluid m-width-300"></img>
+                {c_financeDescription &&
+                  <p>{c_financeDescription}</p>
+                }
+              </Col>
+              <Col>
+                <Markdown>{c_financeOffer?.markdown}</Markdown>
+              </Col>
+            </Row>
+          </Container>
+        </section>
+      }
       <section className='service-area-section'>
         <Container>
           <Row className="align-items-center justify-content-between">

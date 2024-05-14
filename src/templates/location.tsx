@@ -53,6 +53,11 @@ export const config: TemplateConfig = {
       "c_cookiesSettings",
       "c_primaryColor",
       "c_secondaryColor",
+      "c_financeSectionHeading",
+      "c_financeSectionImage",
+      "c_financeDescription",
+      "c_financeOffer",
+      "c_reviewLink",
     ],
     localization: {
       locales: [YEXT_PUBLIC_LOCATION_LOCALE_CODE],
