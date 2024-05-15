@@ -4,6 +4,7 @@ import { FaStar } from "react-icons/fa";
 import { FaArrowRight } from "react-icons/fa6";
 import FormModal from "./FormModal";
 import Markdown from "markdown-to-jsx";
+import { Link } from "@yext/sites-components";
 
 export interface AboutProps {
   data: any;
@@ -24,7 +25,8 @@ const Content = ({ data }: AboutProps) => {
     c_financeSectionHeading,
     c_financeSectionImage,
     c_financeOfferAvailable,
-    c_financeLearnMore
+    c_financeLearnMore,
+    c_reviewLink
   } = data
 
   const [showModal, setShowModal] = React.useState(false);
@@ -37,21 +39,28 @@ const Content = ({ data }: AboutProps) => {
     <>
       <section className='residential-section'>
         <Container>
-          <Row gap={3} className="align-items-center flex-lg-row">
-            <Col xs={12}>
-              <p className="fw-bold mb-5 review-heading">What do our customers have to say?</p>
+          <Row gap={3} className="align-items-start flex-lg-row">
+            <Col xs={8} className="col8">
+              <p className="fw-bold review-heading">What do our customers have to say?</p>
+            </Col>
+            <Col xs={4} className="d-flex py-3 col4">
+              <Link href={c_reviewLink}>
+                <Button className="btn-lg btn-cus" variant="success">
+                  Write a review
+                </Button>
+              </Link>
             </Col>
           </Row>
-          <Row gap={3} className="align-items-top flex-lg-row justify-content-between">
+          <Row gap={3} className="align-items-top flex-lg-row justify-content-between"> 
             {c_review && c_review?.map((item: any, index: any) => {
               return (
                 <Col xs={12} md={4} className="mb-4" key={index}>
                   <div>
-                    <FaStar size="25px" />
-                    <FaStar size="25px" />
-                    <FaStar size="25px" />
-                    <FaStar size="25px" />
-                    <FaStar size="25px" />
+                    <FaStar size="25px" color="#FFBF00" />
+                    <FaStar size="25px" color="#FFBF00" />
+                    <FaStar size="25px" color="#FFBF00" />
+                    <FaStar size="25px" color="#FFBF00" />
+                    <FaStar size="25px" color="#FFBF00" />
                   </div>
                   <p className="fw-bold mt-4 mb-4 review-text">{item.comment}</p>
                   <img width={50} src={item.reviewerLogo.url}></img>
@@ -146,7 +155,7 @@ const Content = ({ data }: AboutProps) => {
               </Col>
               <Col>
                 <Markdown>{c_financeOffer?.markdown}</Markdown>
-                <div className="text-end my-4">
+                <div className="text-center my-4">
                   <Button onClick={() => window.open(c_financeLearnMore,'_blank')} className="btn-lg btn-cus" variant="success">
                     Learn More
                   </Button>

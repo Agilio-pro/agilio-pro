@@ -16,7 +16,6 @@ const Header = ({ data, templateData }: HeaderProps) => {
   const toggleModal = () => {
     setShowModal(!showModal);
   };
-  console.log('data', templateData.c_showLanguageText);
 
   return (
     <>

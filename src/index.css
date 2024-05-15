@@ -627,6 +627,10 @@ footer {
   position: relative;
 }
 
+.col4{
+  justify-content: end !important;
+}
+
 .custom-flex {
   display: flex !important;
 }
@@ -711,5 +715,11 @@ footer {
   }
   .custom-flex {
     display: inline !important;
+  }
+  .col8{
+    width: 100% !important;
+  }
+  .col4{
+    justify-content: start !important;
   }
 }

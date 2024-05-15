@@ -9,7 +9,7 @@ import {
   TemplateRenderProps,
 } from "@yext/pages";
 import "../index.css";
-import Favicon from "../assets/images/favicon.ico";
+import Favicon from "../assets/images/yext-favicon.ico";
 import Content from "../components/Content";
 import Banner from "../components/Banner";
 import PageLayout from "../components/PageLayout";
@@ -83,7 +83,7 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
   relativePrefixToRoot
 }): HeadConfig => {
   const ogImage = document.photoGallery?.[0]?.image?.url ?? null;
-  const fav_icon = document?.c_favIcon ?? Favicon;
+  const fav_icon = document?.c_favIcon?.url ?? Favicon;
 
   return {
     title: document.name,
@@ -92,7 +92,7 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
     tags: [
       { type: "meta", attributes: { name: "description", content: document.description } },
       { type: "meta", attributes: { property: "og:image", content: ogImage } },
-      { type: "link", attributes: { rel: "icon", type: "image/x-icon", href: `${relativePrefixToRoot}${Favicon}` } },
+      { type: "link", attributes: { rel: "icon", type: "image/x-icon", href: `${relativePrefixToRoot}${fav_icon}` } },
     ],
   };
 };
