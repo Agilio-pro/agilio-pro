@@ -4,7 +4,6 @@ import { FaStar } from "react-icons/fa";
 import { FaArrowRight } from "react-icons/fa6";
 import FormModal from "./FormModal";
 import Markdown from "markdown-to-jsx";
-import { Link } from "@yext/sites-components";
 
 export interface AboutProps {
   data: any;
@@ -44,11 +43,9 @@ const Content = ({ data }: AboutProps) => {
               <p className="fw-bold review-heading">What do our customers have to say?</p>
             </Col>
             <Col xs={4} className="d-flex py-3 col4">
-              <Link href={c_reviewLink}>
-                <Button className="btn-lg btn-cus" variant="success">
-                  Write a review
-                </Button>
-              </Link>
+              <Button onClick={() => window.open(c_reviewLink,'_blank')} className="btn-lg btn-cus" variant="success">
+                Write a review
+              </Button>
             </Col>
           </Row>
           <Row gap={3} className="align-items-top flex-lg-row justify-content-between"> 

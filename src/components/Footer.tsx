@@ -39,16 +39,12 @@ const Footer = ({ data, templateData }: FooterProps) => {
                   Call {mainPhone}
                 </Button>
               </Link>
-              {/* <a className="mx-2">
-              </a> */}
               <Button className="btn-lg btn-cus mx-2" variant="success" onClick={() => toggleModal()}>
                 Get a Free Estimate
               </Button>
-              <Link href={templateData?.c_reviewLink}>
-                <Button className="btn-lg btn-cus" variant="success">
-                  Write a review
-                </Button>
-              </Link>
+              <Button onClick={() => window.open(templateData?.c_reviewLink,'_blank')} className="btn-lg btn-cus" variant="success">
+                Write a review
+              </Button>
             </Col>
             <Col lg={3} className="justify-content-center justify-content-lg-end d-flex footer-social-icons align-items-center mb-3">
               <ul>
