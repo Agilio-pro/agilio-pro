@@ -17,6 +17,8 @@ const Header = ({ data, templateData }: HeaderProps) => {
     setShowModal(!showModal);
   };
 
+  console.log('Data', data);
+
   return (
     <>
       <div className='headerwrapper py-1'>
@@ -24,7 +26,8 @@ const Header = ({ data, templateData }: HeaderProps) => {
           <Navbar expand="xl" className='bg rounded px-3 row' >
             <div className="col-6 col-xl-6 col-sm-4 justify-content-md-start justify-content-center d-flex">
               <Navbar.Brand  href="#">
-                <img width={"80%"} src={data.logo.image.url} className="img-fluid"></img>
+                {/* <img width={"80%"} src={data.logo.image.url} className="img-fluid"></img> */}
+                <img width={"80%"} src={data?.c_footerLogo?.image?.url} className="img-fluid"></img>
               </Navbar.Brand>
             </div>
             <div className="col-6 col-xl-6 col-sm-8 justify-content-end align-items-center d-flex">
@@ -38,14 +41,6 @@ const Header = ({ data, templateData }: HeaderProps) => {
                   {templateData?.c_showLanguageText &&
                     <p className="mb-0">Se habla español</p>
                   }
-                  {/* <Form>
-                    <Form.Check
-                      reverse
-                      type="switch"
-                      id="test"
-                      label='Se habla español'
-                    />
-                  </Form> */}
                 </Col>
                 <Button onClick={() =>   toggleModal()} className="btn-lg btn-cus est-btn" variant="success">
                   Get A Free Estimate

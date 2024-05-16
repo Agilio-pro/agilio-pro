@@ -62,6 +62,7 @@ export const config: TemplateConfig = {
       "c_financeLearnMore",
       "c_favIcon",
       "c_showLanguageText",
+      "c_footerLogo"
     ],
     localization: {
       locales: [YEXT_PUBLIC_LOCATION_LOCALE_CODE],

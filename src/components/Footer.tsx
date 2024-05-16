@@ -28,8 +28,8 @@ const Footer = ({ data, templateData }: FooterProps) => {
             <Col xs={12} lg={3} className="justify-content-center d-flex justify-content-lg-start">
               <div className='logo-wrap'>
                 <a href='#' className='d-block mb-3' style={{width: 100}}>
-                  {/* <img alt='Logo' src={`/src/assets/images/smart_hvac.png`} className='footer_logo'></img> */}
-                  <img width={100} height={'auto'} src={data?.logo?.image?.url} className='footer_logo'></img>
+                  {/* <img width={100} height={'auto'} src={data?.logo?.image?.url} className='footer_logo'></img> */}
+                  <img width={100} height={'auto'} src={data?.c_footerLogo?.image?.url} className='footer_logo'></img>
                 </a>
               </div>
             </Col>
