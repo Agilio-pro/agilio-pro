@@ -48,7 +48,7 @@ const Header = ({ data, templateData }: HeaderProps) => {
           </Navbar>
         </Container>
       </div>
-      <FormModal showModal={showModal} hideModal={() => toggleModal()} />
+      <FormModal formId={templateData?.c_formId} showModal={showModal} hideModal={() => toggleModal()} />
     </>
   );
 };

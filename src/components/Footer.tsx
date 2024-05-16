@@ -20,6 +20,8 @@ const Footer = ({ data, templateData }: FooterProps) => {
     setShowModal(!showModal);
   };
 
+  console.log('data', templateData)
+
   return (
     <React.Fragment>
       <footer>
@@ -103,7 +105,7 @@ const Footer = ({ data, templateData }: FooterProps) => {
           </Col>
         </Row>
       </Container>
-      <FormModal formId={data?.c_formId} showModal={showModal} hideModal={() => toggleModal()} />
+      <FormModal formId={templateData?.c_formId} showModal={showModal} hideModal={() => toggleModal()} />
     </React.Fragment>
   );
 };
