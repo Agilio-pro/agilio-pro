@@ -1,10 +1,16 @@
 import React from 'react'
 import HubspotForm from 'react-hubspot-form'
-const HubSpotForm = () => {
+
+export interface FormProps {
+    formId: string;
+}
+
+const HubSpotForm = ({formId}: FormProps) => {
     return (
         <HubspotForm
             portalId='42269009'
-            formId='bf3d5ec5-ea34-4d75-b38b-4ac52418081d'
+            // formId='bf3d5ec5-ea34-4d75-b38b-4ac52418081d'
+            formId={formId}
             onSubmit={() => console.log('Submit!')}
             onReady={(form: any) => {
                 setTimeout(async () => {

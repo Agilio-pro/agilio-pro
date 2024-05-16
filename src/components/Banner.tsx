@@ -13,9 +13,10 @@ export interface BannerProps {
   description:string;
   serviceArea:string;
   trade:string;
+  formId: string;
 }
 
-const Banner = ({ coverPhotoHeading, phoneNumber, coverPhoto, serviceArea, trade }: BannerProps) => {
+const Banner = ({ coverPhotoHeading, phoneNumber, coverPhoto, serviceArea, trade, formId }: BannerProps) => {
 
   const [showModal, setShowModal] = React.useState(false);
 
@@ -48,14 +49,14 @@ const Banner = ({ coverPhotoHeading, phoneNumber, coverPhoto, serviceArea, trade
               <Col xs={12} md={12} lg={5}>
                 <div className="banner-form">
                   <h2 className="banner-form-heading mb-3">Get A Free Estimate</h2>
-                  <HubSpotForm />
+                  <HubSpotForm formId={formId} />
                 </div>
               </Col>
             </Row>
           </Container>
         </section>
       </div>
-      <FormModal showModal={showModal} hideModal={() => toggleModal()} />
+      <FormModal showModal={showModal} formId={formId} hideModal={() => toggleModal()} />
     </>
   )
 };

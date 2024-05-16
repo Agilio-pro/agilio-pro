@@ -17,8 +17,6 @@ const Header = ({ data, templateData }: HeaderProps) => {
     setShowModal(!showModal);
   };
 
-  console.log('Data', data);
-
   return (
     <>
       <div className='headerwrapper py-1'>
@@ -27,7 +25,7 @@ const Header = ({ data, templateData }: HeaderProps) => {
             <div className="col-6 col-xl-6 col-sm-4 justify-content-md-start justify-content-center d-flex">
               <Navbar.Brand  href="#">
                 {/* <img width={"80%"} src={data.logo.image.url} className="img-fluid"></img> */}
-                <img width={"80%"} src={data?.c_footerLogo?.image?.url} className="img-fluid"></img>
+                <img width={"100%"} src={data?.c_footerLogo?.image?.url} className="img-fluid main-logo"></img>
               </Navbar.Brand>
             </div>
             <div className="col-6 col-xl-6 col-sm-8 justify-content-end align-items-center d-flex">

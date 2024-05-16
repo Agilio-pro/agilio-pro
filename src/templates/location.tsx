@@ -62,7 +62,8 @@ export const config: TemplateConfig = {
       "c_financeLearnMore",
       "c_favIcon",
       "c_showLanguageText",
-      "c_footerLogo"
+      "c_footerLogo",
+      "c_formId"
     ],
     localization: {
       locales: [YEXT_PUBLIC_LOCATION_LOCALE_CODE],
@@ -109,7 +110,8 @@ const Location: Template<TemplateRenderProps> = ({
     c_coverPhotoDescription,
     c_coverPhotoHeading,
     c_serviceArea,
-    c_trade
+    c_trade,
+    c_formId
   } = document;
 
   return (
@@ -124,6 +126,7 @@ const Location: Template<TemplateRenderProps> = ({
           description={c_coverPhotoDescription}
           serviceArea={c_serviceArea}
           trade={c_trade}
+          formId= {c_formId}
         />
         <Content data={document} />
       </PageLayout>

@@ -88,20 +88,22 @@ const Footer = ({ data, templateData }: FooterProps) => {
           </Row>
         </Container>
       </footer>
-      <Row className='text-center copyright mb-5'>
-        <Col>
-          <Container className="custom-flex justify-content-center align-items-center footer-link">
-            <p>
-              <FaRegCopyright/>
-              {templateData?.c_copyrightText}
-            </p>
-            <a href={templateData?.c_privacyPolicy}>Privacy Policy</a>
-            <a href={templateData?.c_termsAndCondition}>Terms of Service</a>
-            <a href={templateData?.c_cookiesSettings}>Cookies Settings </a>
-          </Container>
-        </Col>
-      </Row>
-      <FormModal showModal={showModal} hideModal={() => toggleModal()} />
+      <Container>
+        <Row className='text-center copyright mb-5'>
+          <Col>
+            <Container className="custom-flex justify-content-center align-items-center footer-link">
+              <p>
+                <FaRegCopyright/>
+                {templateData?.c_copyrightText}
+              </p>
+              <a href={templateData?.c_privacyPolicy}>Privacy Policy</a>
+              <a href={templateData?.c_termsAndCondition}>Terms of Service</a>
+              <a href={templateData?.c_cookiesSettings}>Cookies Settings </a>
+            </Container>
+          </Col>
+        </Row>
+      </Container>
+      <FormModal formId={data?.c_formId} showModal={showModal} hideModal={() => toggleModal()} />
     </React.Fragment>
   );
 };

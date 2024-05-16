@@ -627,6 +627,10 @@ footer {
   position: relative;
 }
 
+img.main-logo{
+  max-width: 200px;
+}
+
 .col4{
   justify-content: end !important;
 }
@@ -706,10 +710,16 @@ footer {
     line-height: 48px;
   }
   .why-us-number-main::after{
-    height: 330px;
+    height: 285px;
   }
 }
 @media (max-width: 560px){
+  .why-us-number {
+    font-size: 28px;
+    width: 42px;
+    height: 42px;
+    line-height: 42px;
+  }
   .est-btn{
     display: none !important;
   }

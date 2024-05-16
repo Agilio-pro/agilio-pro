@@ -25,7 +25,8 @@ const Content = ({ data }: AboutProps) => {
     c_financeSectionImage,
     c_financeOfferAvailable,
     c_financeLearnMore,
-    c_reviewLink
+    c_reviewLink,
+    c_formId
   } = data
 
   const [showModal, setShowModal] = React.useState(false);
@@ -88,8 +89,8 @@ const Content = ({ data }: AboutProps) => {
               })}
             </Col>
             <Col lg={6}>
-              <div className='img-why-section px-5'>
-                <div className="p-4 mb-4 row align-items-center">
+              <div className='img-why-section px-sm-5'>
+                <div className="px-2 px-sm-4 py-4 mb-4 row align-items-center">
                   <div className="col-3 why-us-number-main">
                     <span className="why-us-number">1</span>
                   </div>
@@ -100,7 +101,7 @@ const Content = ({ data }: AboutProps) => {
                     </p>
                   </div>
                 </div>
-                <div className="p-4 mb-4 row align-items-center">
+                <div className="px-2 px-sm-4 py-4 mb-4 row align-items-center">
                   <div className="col-3 why-us-number-main">
                     <span className="why-us-number">2</span>
                   </div>
@@ -109,7 +110,7 @@ const Content = ({ data }: AboutProps) => {
                   <p className="steps-disc mb-0">Our trained technician will come to your home and assess the situation. The technician will then present you a quote for the work that needs to be done.</p>
                   </div>
                 </div>
-                <div className="p-4 mb-4 row align-items-center">
+                <div className="px-2 px-sm-4 py-4 mb-4 row align-items-center">
                   <div className="col-3 why-us-number-main no-after">
                     <span className="why-us-number">3</span>
                   </div>
@@ -193,7 +194,7 @@ const Content = ({ data }: AboutProps) => {
           </Row>
         </Container>
       </section>
-      <FormModal showModal={showModal} hideModal={() => toggleModal()} />
+      <FormModal formId={c_formId} showModal={showModal} hideModal={() => toggleModal()} />
     </>
   );
 };

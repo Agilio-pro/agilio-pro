@@ -3,12 +3,12 @@ import { Modal } from "react-bootstrap";
 import HubSpotForm from "./HubSpotForm";
 
 interface FormModalProp {
-//   data: any;
+  formId: string;
   showModal: boolean;
   hideModal: () => void;
 }
 
-const FormModal = ({ showModal, hideModal }: FormModalProp) => {
+const FormModal = ({ showModal, hideModal, formId }: FormModalProp) => {
 
     return (
         <Modal
@@ -21,7 +21,7 @@ const FormModal = ({ showModal, hideModal }: FormModalProp) => {
                 <Modal.Title>Get A Free Estimate</Modal.Title>
             </Modal.Header>
             <Modal.Body>
-                <HubSpotForm/>
+                <HubSpotForm formId={formId} />
             </Modal.Body>
         </Modal>
     );
