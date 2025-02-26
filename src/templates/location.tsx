@@ -95,6 +95,17 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
       { type: "meta", attributes: { name: "description", content: document.description } },
       { type: "meta", attributes: { property: "og:image", content: ogImage } },
       { type: "link", attributes: { rel: "icon", type: "image/x-icon", href: `${relativePrefixToRoot}${fav_icon}` } },
+      { type: "script", attributes: { async: "true", src: "https://www.googletagmanager.com/gtag/js?id=AW-10940137344" } },
+      {
+        type: "script",
+        attributes: { type: "text/javascript" },
+        children: `
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'AW-10940137344');
+        `,
+      } as any,
     ],
   };
 };

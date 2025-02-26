@@ -53,14 +53,14 @@ const Footer = ({ data, templateData }: FooterProps) => {
                 {templateData?.instagramHandle &&
                   <li>
                     <a href={templateData?.instagramHandle}>
-                      <FaTwitter />
+                      <FaInstagram />
                     </a>
                   </li>
                 }
                 {templateData?.twitterHandle && 
                   <li>
                     <a href={templateData?.twitterHandle}>
-                      <FaInstagram/>
+                      <FaTwitter/>
                     </a>
                   </li>
                 }
