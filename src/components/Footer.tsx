@@ -20,8 +20,6 @@ const Footer = ({ data, templateData }: FooterProps) => {
     setShowModal(!showModal);
   };
 
-  console.log('data', templateData)
-
   return (
     <React.Fragment>
       <footer>
@@ -29,7 +27,7 @@ const Footer = ({ data, templateData }: FooterProps) => {
           <Row>
             <Col xs={12} lg={3} className="justify-content-center d-flex justify-content-lg-start">
               <div className='logo-wrap'>
-                <a href='#' className='d-block mb-3' style={{width: 100}}>
+                <a href='#' className='d-block mb-3' style={{ width: 100 }}>
                   {/* <img width={100} height={'auto'} src={data?.logo?.image?.url} className='footer_logo'></img> */}
                   <img width={100} height={'auto'} src={data?.c_footerLogo?.image?.url} className='footer_logo'></img>
                 </a>
@@ -44,7 +42,7 @@ const Footer = ({ data, templateData }: FooterProps) => {
               <Button className="btn-lg btn-cus mx-2" variant="success" onClick={() => toggleModal()}>
                 Get a Free Estimate
               </Button>
-              <Button onClick={() => window.open(templateData?.c_reviewLink,'_blank')} className="btn-lg btn-cus" variant="success">
+              <Button onClick={() => window.open(templateData?.c_reviewLink, '_blank')} className="btn-lg btn-cus" variant="success">
                 Write a review
               </Button>
             </Col>
@@ -52,36 +50,38 @@ const Footer = ({ data, templateData }: FooterProps) => {
               <ul>
                 {templateData?.instagramHandle &&
                   <li>
-                    <a href={templateData?.instagramHandle}>
+                    <a href={templateData?.instagramHandle?.includes("https://instagram.com/")
+                      ? templateData.instagramHandle
+                      : `https://instagram.com/${templateData?.instagramHandle}`}>
                       <FaInstagram />
                     </a>
                   </li>
                 }
-                {templateData?.twitterHandle && 
+                {templateData?.twitterHandle &&
                   <li>
                     <a href={templateData?.twitterHandle}>
-                      <FaTwitter/>
+                      <FaTwitter />
                     </a>
                   </li>
                 }
                 {templateData?.facebookPageUrl &&
                   <li>
                     <a href={templateData?.facebookPageUrl}>
-                      <FaFacebook/>
+                      <FaFacebook />
                     </a>
                   </li>
                 }
                 {templateData?.linkedInUrl &&
                   <li>
                     <a href={templateData?.linkedInUrl}>
-                      <FaLinkedin/>
+                      <FaLinkedin />
                     </a>
                   </li>
                 }
                 {templateData?.youTubeChannelUrl &&
                   <li>
                     <a href={templateData?.youTubeChannelUrl}>
-                      <FaYoutube/>
+                      <FaYoutube />
                     </a>
                   </li>
                 }
@@ -95,7 +95,7 @@ const Footer = ({ data, templateData }: FooterProps) => {
           <Col>
             <Container className="custom-flex justify-content-center align-items-center footer-link">
               <p>
-                <FaRegCopyright/>
+                <FaRegCopyright />
                 {templateData?.c_copyrightText}
               </p>
               <a href={templateData?.c_privacyPolicy}>Privacy Policy</a>
